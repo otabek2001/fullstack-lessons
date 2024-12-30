@@ -1,0 +1,21 @@
+{% extends '../base.html' %}
+{% block title %}Barcha kategoriyalar{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">Barcha kategoriyalar</div>
+            <div class="card-body">
+                {% for category in categories %}
+                    <div class="card">
+                        <div class="card-body">
+                            <h5 class="card-title"><a href="{% url 'category_detail' category.pk %}">{{ category.name }}</a></h5>
+                            <p class="card-text">{{ category.description | safe }}</p>
+                            <h6 class="card-subtitle mb-2 text-muted">Muallif: {{ category.created_by }} | {{ category.created_at | date }}</h6>
+                        </div>
+                    </div>
+                {% endfor %}
+            </div>
+        </div>
+    </div>
+{% endblock content %}

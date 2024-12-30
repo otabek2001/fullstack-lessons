@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+{% block title %}Post: {{ post.title }}{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">{{ post.title }}</div>
+            <div class="card-body">
+                <p class="card-text">{{ post.content | safe }}</p>
+                <h6 class="card-subtitle mb-2 text-muted">Muallif: {{ post.author }} | {{ post.date }}</h6>
+                <a href="{% url 'post_edit' post.pk %}" class="btn btn-primary">Tahrirlash</a>
+                <a href="{% url 'post_delete' post.pk %}" class="btn btn-danger">O'chirish</a>
+            </div>
+        </div>
+    </div>
+{% endblock %}

@@ -1,0 +1,16 @@
+{% extends '../base.html' %}
+{% block title %}Kategoriya{% endblock title %}
+
+{% block content %}
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">Kategoriyalar</div>
+            <div class="card-body">
+                <h5 class="card-title">{{ category.name }}</h5>
+                <p class="card-text">{{ category.description }}</p>
+{#                <a href="{% url 'category_update' category.pk %}" class="btn btn-primary">O'zgartirish</a>#}
+{#                <a href="{% url 'category_delete' category.pk %}" class="btn btn-danger">O'chirish</a>#}
+            </div>
+        </div>
+    </div>
+{% endblock %}

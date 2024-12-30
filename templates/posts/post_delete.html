@@ -1,0 +1,17 @@
+{% extends '../base.html' %}
+{% block title %}Postni o'chirish{% endblock title %}
+{% block content %}
+    <div class="container-fluid">
+        <div class="card">
+            <div class="card-header">Postni o'chirish</div>
+            <div class="card-body">
+                <form method="post">
+                    {% csrf_token %}
+                    <p>Postni o'chirishga rozimisiz?</p>
+                    <button type="submit" class="btn btn-danger">Ha</button>
+                    <a href="{% url 'post_detail' post.pk %}" class="btn btn-primary">Yo'q</a>
+                </form>
+            </div>
+        </div>
+    </div>
+{% endblock content %}
